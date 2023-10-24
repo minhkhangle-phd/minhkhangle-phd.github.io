@@ -1,4 +1,4 @@
-![My picture](https://github.com/minhkhangle-phd/minhkhangle-phd.github.io/blob/main/_images/my_picture.jpg)
+![](https://github.com/minhkhangle-phd/minhkhangle-phd.github.io/blob/main/_images/my_picture.jpg)
 
 I am a pathology researcher. Graduating as a medical student, I have been pursuing the field of human pathology since 2019. 
 
