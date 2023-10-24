@@ -1,4 +1,4 @@
-![My picture](../_images/my_picture.jpg)
+![My picture](_images/my_picture.jpg)
 
 I am a pathology researcher. Graduating as a medical student, I have been pursuing the field of human pathology since 2019. 
 
