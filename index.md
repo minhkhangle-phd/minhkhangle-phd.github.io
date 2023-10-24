@@ -19,4 +19,3 @@ I hope to contribute my best, but tiny, effort to the application of AI technolo
 
 
 I thanks Chad Baldwin for his helpful online instruction to create this Blog.
-https://chadbaldwin.net/2021/03/14/how-to-build-a-sql-blog.html
