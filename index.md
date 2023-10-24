@@ -18,4 +18,4 @@ My research and academic interests:
 I hope to contribute my best, but tiny, effort to the application of AI technology in research and practicing pathology.
 
 
-I thanks Chad Baldwin for his helpful online instruction to create this Blog.
+I thank Chad Baldwin for his helpful online instruction to create this Blog.
