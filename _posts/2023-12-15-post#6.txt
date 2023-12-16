@@ -1,0 +1,65 @@
+# AI Computer Vision Histopathology Research Landscape in Cancer Detection
+
+Cancer detection is a common task of computer vision (CV) in digital pathology. There are many different approaches to solving this specific task. Some pipelines involve the detection model to provide the diagnosis of cancer while others are meant to reduce the time of scanning the slides and, thus, release the burden of pathologists.
+
+In this mini-review, I will walk through the landscape of computer vision research in cancer detection, including clinical motivation, methodology, and challenges to the clinical context.
+
+## Why is cancer detection important?
+In daily practice, pathologists encounter a lot of tedious and exhausting, nevertheless important, tasks. Among such duties, cancer detection causes multiple problems related to the clinical context, including pathologist subjectivity and time-consuming manual scanning. Another issue is that the wrong result of this task creates serious problems in medical treatment because it affects the decision-making process of the clinicians.
+
+## The ideas for practical implementations
+The ideas for implementation in these studies can be divided into three modes of application: initial screening, real-time interactive interfaces to assist pathologists, and quality control [1].
+
+![Image 1](/img/post6_image1.webp)
+
+In the initial screening, the goal is that the AI can guarantee not missing out on 100% of “possibly cancer” cases while maintaining a good level of accuracy (there is a good chance “positively screened” cases are truly cancer), it can be practically helpful. The pathologists can work on further evaluation of cancer by only picking up AI-selected cases, which significantly reduces the clinical workload.
+
+![Image 2](/img/post6_image2.webp)
+
+In real-time interactive interfaces, the pathologists use the AI tool as a side-by-side assistant. Researchers attempt to design the AI algorithms not to stand alone but to assist the pathologists. This assistant helps pathologists review WSI by highlighting specific areas that are concerning for cancer, as opposed to categorizing the entire slide as concerning/not concerning for cancer. This will save time and improve the efficiency of detecting cancer.
+
+![Image 3](/img/post6_image3.webp)
+
+In quality control, AI can provide quality control and warn of possible misclassification by reviewing pathologists’ grading. One study described the clinical deployment of Galen Prostate — an AI system that received breakthrough medical device designation from the FDA in June 2021 — as a second-read system within a clinical workflow. This system can help improve the quality of cancer detection by double-checking the evaluation of human pathologists.
+
+![Image 4](/img/post6_image4.webp)
+
+## Challenges in histopathology cancer detection task of CV
+I would like to list some important obstacles in the research or development of software for histopathology cancer detection, including the following:
+
+1. Data Scarcity. It is obvious that publicizing data for histopathology images (under image or whole slide image form) is still in the early phase. So far, The Human Cancer Atlas (TCGA) is one of the most comprehensive cancer genomic programs. However, the data of TCGA projects is usually not enough for training CV models.
+
+2. Time and cost. The data collection, preparation, and construction of a deep learning pipeline can consume a lot of time. When it comes to cost, it includes human and financial resources. The pathology AI projects require the expertise of human pathologists to double-check, create ground-truth labels, or perform comparative analyses. Moreover, these projects require big data, which, in turn, requires large budgets.
+
+3. Requirement of Specialized Knowledge. The annotation, the construction of the pipeline, and the analysis of model interpretation require specialized knowledge in pathology and AI.
+
+4. Machine Learning Challenges. CV tasks in histopathology can be very challenging, especially superhuman ones such as predicting mutations or prognoses from histologic images. The model interpretation and robustness also need careful design and consideration.
+
+5. The Complexity of Data. The histopathological features of an entity can vary from case to case. They can even confuse the pathologists. Therefore, image data of histopathology can be pretty complex and hard to handle.
+
+## Examples of Cancer Detection
+Prostate Adenocarcinoma (PCa). The task of detecting PCa from prostate biopsy specimens is the classic one in cancer detection [1]. Nowadays, we have FDA-approved software to aid pathologists in detecting prostate cancer [2].
+
+Breast Carcinoma (BC) [3]. In addition to conventional CV model training, researchers also apply transferred models to extract the high-dimensional feature representations, using them to train downstream models for recognizing BC.
+
+Ovarian Carcinoma (OC) [4]. The research landscape for detecting OC is similar to BC’s. Researchers attempt to train models from scratch or apply transferred models to diagnose OC from histopathology. Interestingly, Shin et al. 2021 trained an Inception V3 model with high performance with style-transferred data transformation by CycleGAN. The areas under the curve (AUCs) of receiver operating characteristics (ROC) were 1.00 in the internal test and 0.92 in the external test [5].
+
+Cancer Metastasis Detection in Lymph Nodes. Zhao et al [6] used a graph convolutional neural network with feature-selecting multiple instance learning. The network was trained to perform classification to detect the metastatic status of colorectal cancer in lymph nodes.
+
+## Conclusion
+Cancer detection is a challenging task in terms of technicality and pathology. Technically, the CV algorithms that can effectively handle super-resolution WSI are not widely used. Pathologically, the morphology of a cancer type varies tremendously.
+
+To those who may be interested, I hope you enjoy this mini-review.
+
+## References
+1. Busby D, Grauer R, Pandav K, Khosla A, Jain P, Menon M, Haines GK 3rd, Cordon-Cardo C, Gorin MA, Tewari AK. Applications of artificial intelligence in prostate cancer histopathology. Urol Oncol. 2023 Jan 11:S1078–1439(22)00487–2. doi: 10.1016/j.urolonc.2022.12.002. Epub ahead of print. PMID: 36639335.
+
+2. Commissioner, Office of the. “FDA Authorizes Software That Can Help Identify Prostate Cancer.” FDA, 1 Oct. 2021, www.fda.gov/news-events/press-announcements/fda-authorizes-software-can-help-identify-prostate-cancer.
+
+3. Din NMU, Dar RA, Rasool M, Assad A. Breast cancer detection using deep learning: Datasets, methods, and challenges ahead. Comput Biol Med. 2022 Oct;149:106073. doi: 10.1016/j.compbiomed.2022.106073. Epub 2022 Aug 31. PMID: 36103745.
+
+4. Breen J, Allen K, Zucker K, Adusumilli P, Scarsbrook A, Hall G, Orsi NM, Ravikumar N. Artificial intelligence in ovarian cancer histopathology: a systematic review. NPJ Precis Oncol. 2023 Aug 31;7(1):83. doi: 10.1038/s41698–023–00432–6. PMID: 37653025; PMCID: PMC10471607.
+
+5. Shin SJ, You SC, Jeon H, Jung JW, An MH, Park RW, Roh J. Style transfer strategy for developing a generalizable deep learning application in digital pathology. Comput Methods Programs Biomed. 2021 Jan;198:105815. doi: 10.1016/j.cmpb.2020.105815. Epub 2020 Oct 25. PMID: 33160111.
+
+6. Zhao, Yu, et al. Predicting Lymph Node Metastasis Using Histopathological Images Based on Multiple Instance Learning with Deep Graph Convolution. 1 June 2020, https://doi.org/10.1109/cvpr42600.2020.00489.
